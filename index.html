@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mewgenics Radio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎵 Mewgenics Radio 🐱</h1>
+            <p class="tagline">Purr-fect Music Streaming</p>
+        </header>
+
+        <div class="player">
+            <div class="album-art">
+                <div class="cat-icon">🐱</div>
+            </div>
+
+            <div class="player-info">
+                <h2 id="track-title">Loading...</h2>
+                <p id="track-artist">Mewgenics Radio</p>
+            </div>
+
+            <audio id="audio-player" crossorigin="anonymous">
+                Your browser does not support the audio element.
+            </audio>
+
+            <div class="controls">
+                <button id="prev-btn" class="btn" title="Previous">⏮️</button>
+                <button id="play-btn" class="btn play-btn" title="Play">▶️</button>
+                <button id="next-btn" class="btn" title="Next">⏭️</button>
+                <button id="shuffle-btn" class="btn" title="Shuffle">🔀</button>
+                <button id="loop-btn" class="btn" title="Loop">🔁</button>
+            </div>
+
+            <div class="progress-container">
+                <span id="current-time">0:00</span>
+                <div class="progress-bar">
+                    <div id="progress" class="progress"></div>
+                </div>
+                <span id="duration">0:00</span>
+            </div>
+
+            <div class="volume-container">
+                <span>🔊</span>
+                <input type="range" id="volume-slider" min="0" max="100" value="70">
+                <span id="volume-percent">70%</span>
+            </div>
+
+            <div class="playlist">
+                <h3>Now Playing</h3>
+                <ul id="playlist-list"></ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Mewgenics Radio | Streaming Purr-formances 🎧</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
