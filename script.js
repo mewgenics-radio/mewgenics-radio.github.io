@@ -1,10 +1,95 @@
 class MewgenicsRadio {
     constructor() {
-        this.tracks = [];
+        // Встроенный список треков - работает без сервера!
+        this.tracks = [
+            { name: "Mewgenics OST - Track 1 - Eatin' Rats", path: "tracks/Mewgenics OST - Track 1 - Eatin' Rats.mp3" },
+            { name: "Mewgenics OST - Track 2 - Flush (Feat. Geoff Pearlman)", path: "tracks/Mewgenics OST - Track 2 - Flush (Feat. Geoff Pearlman).mp3" },
+            { name: "Mewgenics OST - Track 3 - Crystalline Dreams (Feat. Kristine Slipp)", path: "tracks/Mewgenics OST - Track 3 - Crystalline Dreams (Feat. Kristine Slipp).mp3" },
+            { name: "Mewgenics OST - Track 4 - Chumbucket Kitty (Feat. Chandler Travis)", path: "tracks/Mewgenics OST - Track 4 - Chumbucket Kitty (Feat. Chandler Travis).mp3" },
+            { name: "Mewgenics OST - Track 5 - Them Kitty Bones (Feat. Zoe Lewis)", path: "tracks/Mewgenics OST - Track 5 - Them Kitty Bones (Feat. Zoe Lewis).mp3" },
+            { name: "Mewgenics OST - Track 6 - Guillotina (Feat. Carla Kihlstedt)", path: "tracks/Mewgenics OST - Track 6 - Guillotina (Feat. Carla Kihlstedt).mp3" },
+            { name: "Mewgenics OST - Track 7 - Lonesome Road (Feat. Freddi Price)", path: "tracks/Mewgenics OST - Track 7 - Lonesome Road (Feat. Freddi Price).mp3" },
+            { name: "Mewgenics OST - Track 8 - Alone In The Dark", path: "tracks/Mewgenics OST - Track 8 - Alone In The Dark.mp3" },
+            { name: "Mewgenics OST - Track 9 - Down With The Devil (Feat. Eric McFadden)", path: "tracks/Mewgenics OST - Track 9 - Down With The Devil (Feat. Eric McFadden).mp3" },
+            { name: "Mewgenics OST - Track 10 - Feline Invader (Feat. Emily Wade Adams)", path: "tracks/Mewgenics OST - Track 10 - Feline Invader (Feat. Emily Wade Adams).mp3" },
+            { name: "Mewgenics OST - Track 11 - So High (Feat. Spencer Day)", path: "tracks/Mewgenics OST - Track 11 - So High (Feat. Spencer Day).mp3" },
+            { name: "Mewgenics OST - Track 12 - Brush Your Teeth (Feat. Anna Chan)", path: "tracks/Mewgenics OST - Track 12 - Brush Your Teeth (Feat. Anna Chan).mp3" },
+            { name: "Mewgenics OST - Track 13 - Get In The Cage (Feat. Eric McFadden)", path: "tracks/Mewgenics OST - Track 13 - Get In The Cage (Feat. Eric McFadden).mp3" },
+            { name: "Mewgenics OST - Track 14 - Sweet Delicious (Feat. Aaron Lazar)", path: "tracks/Mewgenics OST - Track 14 - Sweet Delicious (Feat. Aaron Lazar).mp3" },
+            { name: "Mewgenics OST - Track 15 - Throbbing King (Feat. Aaron Lazar)", path: "tracks/Mewgenics OST - Track 15 - Throbbing King (Feat. Aaron Lazar).mp3" },
+            { name: "Mewgenics OST - Track 16 - Endless Misery", path: "tracks/Mewgenics OST - Track 16 - Endless Misery.mp3" },
+            { name: "Mewgenics OST - Track 17 - Mom I Really Hate You (Feat. Kami Lyle and Tallulah Bossi)", path: "tracks/Mewgenics OST - Track 17 - Mom I Really Hate You (Feat. Kami Lyle and Tallulah Bossi).mp3" },
+            { name: "Mewgenics OST - Track 18 - Tuff (Feat. Chandler Travis)", path: "tracks/Mewgenics OST - Track 18 - Tuff (Feat. Chandler Travis).mp3" },
+            { name: "Mewgenics OST - Track 19 - HUMANICIDE (Feat. Billy Campion)", path: "tracks/Mewgenics OST - Track 19 - HUMANICIDE (Feat. Billy Campion).mp3" },
+            { name: "Mewgenics OST - Track 20 - We're Dead (Feat. Tanya Donelly)", path: "tracks/Mewgenics OST - Track 20 - We're Dead (Feat. Tanya Donelly).mp3" },
+            { name: "Mewgenics OST - Track 21 - Taser Paws (Feat. Carla Kihlstedt)", path: "tracks/Mewgenics OST - Track 21 - Taser Paws (Feat. Carla Kihlstedt).mp3" },
+            { name: "Mewgenics OST - Track 22 - Chaos (Feat. Storm Large)", path: "tracks/Mewgenics OST - Track 22 - Chaos (Feat. Storm Large).mp3" },
+            { name: "Mewgenics OST - Track 23 - Crazy Days", path: "tracks/Mewgenics OST - Track 23 - Crazy Days.mp3" },
+            { name: "Mewgenics OST - Track 24 - Bolt Of Lightning", path: "tracks/Mewgenics OST - Track 24 - Bolt Of Lightning.mp3" },
+            { name: "Mewgenics OST - Track 25 - The Crack of Doom (Feat. Carla Kihlstedt)", path: "tracks/Mewgenics OST - Track 25 - The Crack of Doom (Feat. Carla Kihlstedt).mp3" },
+            { name: "Mewgenics OST - Track 26 - Angel Wings (Feat. Siobhan Magnus)", path: "tracks/Mewgenics OST - Track 26 - Angel Wings (Feat. Siobhan Magnus).mp3" },
+            { name: "Mewgenics OST - Track 27 - Dig Your Own Grave (Feat. Tianna Esperanza)", path: "tracks/Mewgenics OST - Track 27 - Dig Your Own Grave (Feat. Tianna Esperanza).mp3" },
+            { name: "Mewgenics OST - Track 28 - Future Meets the Past (Feat. Freddi Price)", path: "tracks/Mewgenics OST - Track 28 - Future Meets the Past (Feat. Freddi Price).mp3" },
+            { name: "Mewgenics OST - Track 29 - Eatin' Rats (Instrumental)", path: "tracks/Mewgenics OST - Track 29 - Eatin' Rats (Instrumental).mp3" },
+            { name: "Mewgenics OST - Track 30 - Flush (Instrumental)", path: "tracks/Mewgenics OST - Track 30 - Flush (Instrumental).mp3" },
+            { name: "Mewgenics OST - Track 31 - Crystalline Dreams (Instrumental)", path: "tracks/Mewgenics OST - Track 31 - Crystalline Dreams (Instrumental).mp3" },
+            { name: "Mewgenics OST - Track 32 - Chumbucket Kitty (Instrumental)", path: "tracks/Mewgenics OST - Track 32 - Chumbucket Kitty (Instrumental).mp3" },
+            { name: "Mewgenics OST - Track 33 - Them Kitty Bones (Instrumental)", path: "tracks/Mewgenics OST - Track 33 - Them Kitty Bones (Instrumental).mp3" },
+            { name: "Mewgenics OST - Track 34 - Guillotina (Instrumental)", path: "tracks/Mewgenics OST - Track 34 - Guillotina (Instrumental).mp3" },
+            { name: "Mewgenics OST - Track 35 - Lonesome Road (Instrumental)", path: "tracks/Mewgenics OST - Track 35 - Lonesome Road (Instrumental).mp3" },
+            { name: "Mewgenics OST - Track 36 - Alone In The Dark (Instrumental)", path: "tracks/Mewgenics OST - Track 36 - Alone In The Dark (Instrumental).mp3" },
+            { name: "Mewgenics OST - Track 37 - Down With The Devil (Instrumental)", path: "tracks/Mewgenics OST - Track 37 - Down With The Devil (Instrumental).mp3" },
+            { name: "Mewgenics OST - Track 38 - Feline Invader (Instrumental)", path: "tracks/Mewgenics OST - Track 38 - Feline Invader (Instrumental).mp3" },
+            { name: "Mewgenics OST - Track 39 - So High (Instrumental)", path: "tracks/Mewgenics OST - Track 39 - So High (Instrumental).mp3" },
+            { name: "Mewgenics OST - Track 40 - Brush Your Teeth (Instrumental)", path: "tracks/Mewgenics OST - Track 40 - Brush Your Teeth (Instrumental).mp3" },
+            { name: "Mewgenics OST - Track 41 - Get In The Cage (Instrumental)", path: "tracks/Mewgenics OST - Track 41 - Get In The Cage (Instrumental).mp3" },
+            { name: "Mewgenics OST - Track 42 - Sweet Delicious (Instrumental)", path: "tracks/Mewgenics OST - Track 42 - Sweet Delicious (Instrumental).mp3" },
+            { name: "Mewgenics OST - Track 43 - Throbbing King (Instrumental)", path: "tracks/Mewgenics OST - Track 43 - Throbbing King (Instrumental).mp3" },
+            { name: "Mewgenics OST - Track 44 - Endless Misery (Instrumental)", path: "tracks/Mewgenics OST - Track 44 - Endless Misery (Instrumental).mp3" },
+            { name: "Mewgenics OST - Track 45 - Mom I Really Hate You (Instrumental)", path: "tracks/Mewgenics OST - Track 45 - Mom I Really Hate You (Instrumental).mp3" },
+            { name: "Mewgenics OST - Track 46 - Tuff (Instrumental)", path: "tracks/Mewgenics OST - Track 46 - Tuff (Instrumental).mp3" },
+            { name: "Mewgenics OST - Track 47 - HUMANICIDE (Instrumental)", path: "tracks/Mewgenics OST - Track 47 - HUMANICIDE (Instrumental).mp3" },
+            { name: "Mewgenics OST - Track 48 - We're Dead (Instrumental)", path: "tracks/Mewgenics OST - Track 48 - We're Dead (Instrumental).mp3" },
+            { name: "Mewgenics OST - Track 49 - Taser Paws (Instrumental)", path: "tracks/Mewgenics OST - Track 49 - Taser Paws (Instrumental).mp3" },
+            { name: "Mewgenics OST - Track 50 - Chaos (Instrumental)", path: "tracks/Mewgenics OST - Track 50 - Chaos (Instrumental).mp3" },
+            { name: "Mewgenics OST - Track 51 - Crazy Days (Instrumental)", path: "tracks/Mewgenics OST - Track 51 - Crazy Days (Instrumental).mp3" },
+            { name: "Mewgenics OST - Track 52 - Bolt Of Lightning (Instrumental)", path: "tracks/Mewgenics OST - Track 52 - Bolt Of Lightning (Instrumental).mp3" },
+            { name: "Mewgenics OST - Track 53 - Crack of Doom (Instrumental)", path: "tracks/Mewgenics OST - Track 53 - Crack of Doom (Instrumental).mp3" },
+            { name: "Mewgenics OST - Track 54 - Angel Wings (Instrumental)", path: "tracks/Mewgenics OST - Track 54 - Angel Wings (Instrumental).mp3" },
+            { name: "Mewgenics OST - Track 55 - Dig Your Own Grave (Instrumental)", path: "tracks/Mewgenics OST - Track 55 - Dig Your Own Grave (Instrumental).mp3" },
+            { name: "Mewgenics OST - Track 56 - Future Meets the Past (Instrumental)", path: "tracks/Mewgenics OST - Track 56 - Future Meets the Past (Instrumental).mp3" },
+            { name: "Mewgenics OST - Track 57 - Mewgenics Theme", path: "tracks/Mewgenics OST - Track 57 - Mewgenics Theme.mp3" },
+            { name: "Mewgenics OST - Track 58 - Mewgenics Theme (Alt)", path: "tracks/Mewgenics OST - Track 58 - Mewgenics Theme (Alt).mp3" },
+            { name: "Mewgenics OST - Track 59 - Ballad of D. Claude", path: "tracks/Mewgenics OST - Track 59 - Ballad of D. Claude.mp3" },
+            { name: "Mewgenics OST - Track 60 - Black Pussy", path: "tracks/Mewgenics OST - Track 60 - Black Pussy.mp3" },
+            { name: "Mewgenics OST - Track 61 - Dirty Mittens", path: "tracks/Mewgenics OST - Track 61 - Dirty Mittens.mp3" },
+            { name: "Mewgenics OST - Track 62 - Fleas and Parasites", path: "tracks/Mewgenics OST - Track 62 - Fleas and Parasites.mp3" },
+            { name: "Mewgenics OST - Track 63 - Kannibal Kitty", path: "tracks/Mewgenics OST - Track 63 - Kannibal Kitty.mp3" },
+            { name: "Mewgenics OST - Track 64 - Kat Fight", path: "tracks/Mewgenics OST - Track 64 - Kat Fight.mp3" },
+            { name: "Mewgenics OST - Track 65 - The Legend of the Claw", path: "tracks/Mewgenics OST - Track 65 - The Legend of the Claw.mp3" },
+            { name: "Mewgenics OST - Track 66 - Sad Cat Lady", path: "tracks/Mewgenics OST - Track 66 - Sad Cat Lady.mp3" },
+            { name: "Mewgenics OST - Track 67 - 9th Life", path: "tracks/Mewgenics OST - Track 67 - 9th Life.mp3" },
+            { name: "Mewgenics OST - Track 68 - Battle Of The Fleabags", path: "tracks/Mewgenics OST - Track 68 - Battle Of The Fleabags.mp3" },
+            { name: "Mewgenics OST - Track 69 - Bravest Kat", path: "tracks/Mewgenics OST - Track 69 - Bravest Kat.mp3" },
+            { name: "Mewgenics OST - Track 70 - Break His Chains", path: "tracks/Mewgenics OST - Track 70 - Break His Chains.mp3" },
+            { name: "Mewgenics OST - Track 71 - Cat Race", path: "tracks/Mewgenics OST - Track 71 - Cat Race.mp3" },
+            { name: "Mewgenics OST - Track 72 - Catsanova", path: "tracks/Mewgenics OST - Track 72 - Catsanova.mp3" },
+            { name: "Mewgenics OST - Track 73 - Kitschy Kitty", path: "tracks/Mewgenics OST - Track 73 - Kitschy Kitty.mp3" },
+            { name: "Mewgenics OST - Track 74 - Kitty March", path: "tracks/Mewgenics OST - Track 74 - Kitty March.mp3" },
+            { name: "Mewgenics OST - Track 75 - Lost Kitty", path: "tracks/Mewgenics OST - Track 75 - Lost Kitty.mp3" },
+            { name: "Mewgenics OST - Track 76 - Mice Cream", path: "tracks/Mewgenics OST - Track 76 - Mice Cream.mp3" },
+            { name: "Mewgenics OST - Track 77 - Napping All Day", path: "tracks/Mewgenics OST - Track 77 - Napping All Day.mp3" },
+            { name: "Mewgenics OST - Track 78 - Peppy Country Ditty", path: "tracks/Mewgenics OST - Track 78 - Peppy Country Ditty.mp3" },
+            { name: "Mewgenics OST - Track 79 - Scrambled", path: "tracks/Mewgenics OST - Track 79 - Scrambled.mp3" },
+            { name: "Mewgenics OST - Track 80 - Stray Cat", path: "tracks/Mewgenics OST - Track 80 - Stray Cat.mp3" },
+            { name: "Mewgenics OST - Track 81 - Tears In My Milk Bowl", path: "tracks/Mewgenics OST - Track 81 - Tears In My Milk Bowl.mp3" },
+            { name: "Mewgenics OST - Track 82 - Catamine Smoothie", path: "tracks/Mewgenics OST - Track 82 - Catamine Smoothie.mp3" }
+        ];
+        
         this.currentTrackIndex = 0;
         this.isPlaying = false;
         this.isShuffle = false;
-        this.loopMode = 'all'; // 'all', 'one', 'off'
+        this.loopMode = 'all';
         this.shuffledIndices = [];
 
         this.audio = document.getElementById('audio-player');
@@ -27,45 +112,12 @@ class MewgenicsRadio {
     }
 
     async init() {
-        await this.loadTracks();
         this.setupEventListeners();
         this.updatePlaylist();
         if (this.tracks.length > 0) {
             this.loadTrack(0);
         }
-    }
-
-    async loadTracks() {
-        try {
-            // Fetch the list of files from the tracks directory
-            const response = await fetch('tracks/');
-            const html = await response.text();
-            
-            // Parse the HTML to extract MP3 files
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-            
-            // Look for links to MP3 files
-            const links = doc.querySelectorAll('a');
-            const mp3Files = Array.from(links)
-                .map(link => link.href)
-                .filter(href => href.endsWith('.mp3'))
-                .map(href => {
-                    const filename = href.split('/').pop();
-                    return {
-                        name: decodeURIComponent(filename.replace('.mp3', '')),
-                        path: `tracks/${filename}`
-                    };
-                })
-                .sort((a, b) => a.name.localeCompare(b.name));
-
-            this.tracks = mp3Files;
-            console.log(`Loaded ${this.tracks.length} tracks`);
-        } catch (error) {
-            console.log('Directory listing not available. Please ensure tracks are accessible.');
-            // Fallback: you can manually add tracks here if needed
-            this.tracks = [];
-        }
+        console.log(`✅ Loaded ${this.tracks.length} tracks (offline mode)`);
     }
 
     setupEventListeners() {
@@ -183,7 +235,6 @@ class MewgenicsRadio {
         } else if (this.loopMode === 'all') {
             this.nextTrack();
         } else {
-            // No loop, stop playing
             this.pause();
         }
     }
