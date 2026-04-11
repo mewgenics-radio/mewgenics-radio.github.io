@@ -291,4 +291,21 @@ footer {
     object-fit: cover;
     border-radius: 15px;
 }
+    .share-simple {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.85em;
+    color: #666;
+}
+
+.share-simple-link {
+    color: #667eea;
+    text-decoration: none;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.share-simple-link:hover {
+    text-decoration: underline;
+}
 }
