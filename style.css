@@ -285,4 +285,10 @@ footer {
         height: 60px;
         font-size: 1.8em;
     }
+    .album-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
 }
