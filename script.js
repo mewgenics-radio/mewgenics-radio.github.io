@@ -293,7 +293,68 @@ class MewgenicsRadio {
         return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
     }
 }
-
+    setupShareButtons() {
+        const shareTrigger = document.getElementById('share-link-trigger');
+        const shareButtons = document.getElementById('share-buttons');
+        const shareX = document.getElementById('share-x');
+        const shareFB = document.getElementById('share-fb');
+        const shareCopy = document.getElementById('share-copy');
+        
+        // Get current track info
+        const getShareText = () => {
+            const trackName = this.tracks[this.currentTrackIndex]?.name || 'Mewgenics OST';
+            return `🎵 I'm listening to "${trackName}" on Mewgenics Radio! 🐱\n\n🎮 Game: Mewgenics by Edmund McMillen & Tyler Glaiel\n🎶 Genre: Indie / Alternative / Cat Music`;
+        };
+        
+        const getShareHashtags = () => {
+            return 'Mewgenics,MewgenicsOST,GameSoundtrack,IndieGame,CatMusic,GamingMusic';
+        };
+        
+        const getShareUrl = () => {
+            return window.location.href;
+        };
+        
+        // Toggle buttons on click
+        shareTrigger.addEventListener('click', () => {
+            if (shareButtons.style.display === 'none' || !shareButtons.style.display) {
+                shareButtons.style.display = 'flex';
+            } else {
+                shareButtons.style.display = 'none';
+            }
+        });
+        
+        // Share on X (Twitter) with hashtags
+        shareX.addEventListener('click', () => {
+            const text = encodeURIComponent(getShareText());
+            const hashtags = encodeURIComponent(getShareHashtags());
+            const url = encodeURIComponent(getShareUrl());
+            window.open(`https://twitter.com/intent/tweet?text=${text}&hashtags=${hashtags}&url=${url}`, '_blank', 'width=600,height=400');
+            shareButtons.style.display = 'none';
+        });
+        
+        // Share on Facebook
+        shareFB.addEventListener('click', () => {
+            const url = encodeURIComponent(getShareUrl());
+            const quote = encodeURIComponent(`🎵 Listening to Mewgenics OST! 🐱 #Mewgenics #GameSoundtrack`);
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${quote}`, '_blank', 'width=600,height=400');
+            shareButtons.style.display = 'none';
+        });
+        
+        // Copy link with message
+        shareCopy.addEventListener('click', async () => {
+            const message = `${getShareText()}\n\nListen here: ${getShareUrl()}\n\n#Mewgenics #MewgenicsOST #GameSoundtrack #IndieGame #CatMusic`;
+            try {
+                await navigator.clipboard.writeText(message);
+                shareCopy.textContent = '✅ Copied!';
+                setTimeout(() => {
+                    shareCopy.textContent = '🔗 Copy Link + Message';
+                    shareButtons.style.display = 'none';
+                }, 2000);
+            } catch (err) {
+                alert('Could not copy link');
+            }
+        });
+    }
 // Initialize the radio when the page loads
 document.addEventListener('DOMContentLoaded', () => {
     new MewgenicsRadio();
