@@ -115,8 +115,9 @@ class MewgenicsRadio {
         this.setupEventListeners();
         this.updatePlaylist();
         if (this.tracks.length > 0) {
-            this.loadTrack(0);
-        }
+            const randomIndex = Math.floor(Math.random() * this.tracks.length);
+            this.loadTrack(randomIndex);
+         }
         console.log(`✅ Loaded ${this.tracks.length} tracks (offline mode)`);
     }
 
